@@ -194,8 +194,21 @@
       <h2>Кто я</h2>
       <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
         <!-- Изображение слева -->
-        <div style="flex: 1; min-width: 300px;">
-          <img src="https://placehold.co/600x400?text=MirSadko+in+Cyber+Space" alt="MirSadko за работой" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <div style="flex: 1; min-width: 300px; position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="https://via.placeholder.com/600x400?text=Loading..."
+            style="width: 100%; height: auto; border-radius: 8px;"
+          >
+            <source src="assets/koding.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+          <div style="position: absolute; bottom: 0.5rem; left: 0.5rem; background: rgba(0,0,0,0.7); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #00ff9d;">
+            MirSadko in Cyber Space
+          </div>
         </div>
 
         <!-- Описание справа -->
