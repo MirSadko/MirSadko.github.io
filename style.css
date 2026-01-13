@@ -12,6 +12,15 @@
   box-sizing: border-box;
 }
 
+header video {
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from { filter: drop-shadow(0 0 5px #00ff9d); }
+  to { filter: drop-shadow(0 0 15px #00ff9d) brightness(1.2); }
+}
+
 body {
   font-family: 'Courier New', monospace;
   background: linear-gradient(135deg, var(--c-bg), #0a0f1d);
