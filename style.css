@@ -1,19 +1,9 @@
 :root {
-  --c-bg: #0f172a;
+  --c-bg: #0c1427;
   --c-txt: #e2e8f0;
   --c-accent: #00ff9d;
   --c-btn: #0a3d62;
   --c-glow: #00ff9d;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --c-bg: #f8fafc;
-    --c-txt: #1e293b;
-    --c-accent: #00cc78;
-    --c-btn: #0a3d62;
-    --c-glow: #00cc78;
-  }
 }
 
 * {
@@ -24,13 +14,10 @@
 
 body {
   font-family: 'Courier New', monospace;
-  background-color: var(--c-bg);
+  background: linear-gradient(135deg, var(--c-bg), #0a0f1d);
   color: var(--c-txt);
   line-height: 1.6;
   padding: 2rem 1rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080?text=Cyber+Background');
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .container {
@@ -68,6 +55,7 @@ h1 {
   background: rgba(15, 23, 42, 0.5);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 255, 157, 0.2);
+  color: var(--c-txt);
 }
 
 h2 {
