@@ -3,27 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Виктор — Python & Кибербезопасность</title>
+  <title>MirSadko — Python & Кибербезопасность для детей</title>
   <style>
-    :root { --c-bg: #0f172a; --c-txt: #e2e8f0; --c-accent: #38bdf8; --c-btn: #1e40af; }
-    @media (prefers-color-scheme: light) {
-      :root { --c-bg: #f8fafc; --c-txt: #1e293b; --c-accent: #0ea5e9; --c-btn: #1d4ed8; }
+    :root {
+      --c-bg: #0f172a;
+      --c-txt: #e2e8f0;
+      --c-accent: #00ff9d; /* неоново-зелёный */
+      --c-btn: #0a3d62;
+      --c-glow: #00ff9d;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --c-bg: #f8fafc;
+        --c-txt: #1e293b;
+        --c-accent: #00cc78;
+        --c-btn: #0a3d62;
+        --c-glow: #00cc78;
+      }
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Courier New', monospace;
       background-color: var(--c-bg);
       color: var(--c-txt);
       line-height: 1.6;
       padding: 2rem 1rem;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080?text=Cyber+Background');
+      background-size: cover;
+      background-attachment: fixed;
     }
-    .container { max-width: 800px; margin: 0 auto; }
-    header { text-align: center; margin-bottom: 3rem; }
-    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .subtitle { font-size: 1.1rem; opacity: 0.8; }
-    .section { margin-bottom: 2.5rem; }
-    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--c-accent); }
-    ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px var(--c-glow); }
+      to { text-shadow: 0 0 20px var(--c-glow); }
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--c-accent);
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      font-family: 'Courier New', monospace;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 255, 157, 0.2);
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--c-accent);
+      font-weight: 600;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
     .btn {
       display: inline-block;
       background: var(--c-btn);
@@ -32,57 +88,168 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
-      transition: opacity 0.2s;
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
     }
-    .btn:hover { opacity: 0.9; }
-    form { display: grid; gap: 1rem; }
+    .btn:hover {
+      background: var(--c-accent);
+      color: black;
+      box-shadow: 0 0 20px rgba(0, 255, 157, 0.6);
+      transform: translateY(-2px);
+    }
+    .course-highlight {
+      background: rgba(10, 61, 98, 0.3);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--c-accent);
+      margin: 1.5rem 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.3); }
+      70% { box-shadow: 0 0 0 10px rgba(0, 255, 157, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0); }
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+    }
     input, textarea {
       padding: 0.75rem;
       border: 1px solid #475569;
       background: transparent;
       color: var(--c-txt);
       border-radius: 4px;
+      font-family: inherit;
     }
-    input::placeholder, textarea::placeholder { color: #94a3b8; }
-    footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; opacity: 0.7; }
+    input::placeholder, textarea::placeholder {
+      color: #94a3b8;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      border-top: 1px solid rgba(0, 255, 157, 0.1);
+      padding-top: 1rem;
+    }
+    a {
+      color: var(--c-accent);
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #00ff9d;
+      text-shadow: 0 0 5px #00ff9d;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .hero-text {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: var(--c-accent);
+    }
   </style>
 </head>
 <body>
   <div class="container">
+
     <header>
-      <h1>Виктор С.</h1>
-      <div class="subtitle">Python • ЕГЭ по информатике • Кибербезопасность</div>
+      <h1>👨‍💻 MirSadko</h1>
+      <p class="subtitle">Инженер | Преподаю Python детям | Учу думать — не кликать.</p>
     </header>
+
+    <!-- Видео с киберпанк-стилем -->
+    <div class="video-container">
+      <video autoplay muted loop playsinline poster="https://via.placeholder.com/1920x1080?text=Cyber+Preview">
+        <source src="https://yourdomain.com/assets/cyber-video.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+      <div class="hero-text">Python + Кибербезопасность = Будущее</div>
+    </div>
+
+    <section class="section">
+      <h2>Кто я</h2>
+      <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+        <!-- Изображение слева -->
+        <div style="flex: 1; min-width: 300px;">
+          <img src="https://placehold.co/600x400?text=MirSadko+in+Cyber+Space" alt="MirSadko за работой" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        </div>
+
+        <!-- Описание справа -->
+        <div style="flex: 1; min-width: 300px;">
+          <p><strong>Привет! Я — MirSadko.</strong></p>
+          <p>Я инженер и преподаю Python детям от 9 до 16 лет. Моя цель — научить их не просто писать код, а думать как программист, решать задачи и создавать свои проекты.</p>
+          <p>Люблю кибербезопасность, CTF, анализ трафика и всё, что связано с логикой и защитой данных. Мы играем в CYBER-RPG — где каждый урок — это миссия, а код — оружие.</p>
+          <a href="https://t.me/Mir_Sadko" class="btn" target="_blank" rel="noopener">💬 Написать в Telegram</a>
+        </div>
+      </div>
+    </section>
 
     <section class="section">
       <h2>Чем занимаюсь</h2>
       <ul>
-        <li>✅ Индивидуальные занятия по Python и подготовке к ЕГЭ</li>
-        <li>🔧 Практические задачи: рекурсия, ДП, графы, оптимизация</li>
-        <li>🛡️ Учусь и применяю основы кибербезопасности (сети, анализ трафика, CTF)</li>
+        <li>✅ Индивидуальные занятия по Python для детей и подростков</li>
+        <li>🎮 Создание CYBER-RPG: учимся через игры и миссии</li>
+        <li>🛡️ Основы кибербезопасности: сети, CTF, анализ трафика</li>
+        <li>🤖 Разработка Telegram-ботов и простых приложений</li>
       </ul>
     </section>
 
     <section class="section">
-      <h2>Для учеников</h2>
-      <p>Акцент — не на теорию, а на решение реальных экзаменационных задач. Разбираем типичные «ловушки» ЕГЭ: №22, №25, №26, №27.</p>
+      <h2>🔥 Курс: "CYBER-RPG: Python для юных хакеров"</h2>
+      <div class="course-highlight">
+        <p><strong>Что входит:</strong></p>
+        <ul>
+          <li>8 модулей: от переменных до ботов и сетей</li>
+          <li>Игровая механика: каждая тема — миссия с наградами</li>
+          <li>Практика: пишем код, взламываем виртуальные системы (в безопасности!)</li>
+          <li>Поддержка в Telegram 7 дней в неделю</li>
+          <li>Доступ к закрытому каналу с новыми заданиями</li>
+        </ul>
+        <p><strong>Стоимость:</strong> 4 500 ₽ / месяц</p>
+        <a href="https://t.me/Mir_Sadko" class="btn" target="_blank" rel="noopener">👉 Записаться на курс</a>
+      </div>
     </section>
 
     <section class="section">
       <h2>Связаться</h2>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Ваш email *" required>
-        <textarea name="message" rows="4" placeholder="Тема: подготовка к ЕГЭ / Python / сотрудничество *" required></textarea>
-        <button class="btn" type="submit">Отправить</button>
-      </form>
-      <p style="margin-top: 0.5rem; font-size: 0.9em;">
-        * Форма работает бесплатно через <a href="https://formspree.io" style="color:var(--c-accent)">Formspree</a> (до 50 заявок/мес)
+      <p>Пишите напрямую — отвечаю быстро:</p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+        <a href="https://t.me/Mir_Sadko" class="btn" target="_blank" rel="noopener">💬 Написать в Telegram</a>
+        <a href="https://wa.me/79654542140" class="btn" target="_blank" rel="noopener">📱 Написать в WhatsApp</a>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.9em; opacity: 0.8;">
+        Укажите, пожалуйста, тему сообщения: Python, CYBER-RPG или сотрудничество.
       </p>
     </section>
 
     <footer>
-      <p>г. Приозёрск, Карагандинская область • 2025</p>
+      <p>г. Приозёрск • © 2026 MirSadko | <a href="https://t.me/Mir_Sadko">Telegram</a></p>
     </footer>
+
   </div>
 </body>
 </html>
