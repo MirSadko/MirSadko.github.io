@@ -17,8 +17,8 @@ header video {
 }
 
 @keyframes neon-glow {
-  from { filter: drop-shadow(0 0 5px #00ff9d); }
-  to { filter: drop-shadow(0 0 15px #00ff9d) brightness(1.2); }
+  from { filter: drop-shadow(0 0 3px #00ff9d); }
+  to { filter: drop-shadow(0 0 9px #00ff9d) brightness(1.2); }
 }
 
 body {
